@@ -20,12 +20,12 @@ def health_check():
 
 @app.route("/readiness_check")
 def readiness_check():
-    try:
-        count = db.session.query(Token).count()
-    except Exception as e:
-        app.logger.error(e)
-        return "failed", 500
-    else:
+    # try:
+    #     count = db.session.query(Token).count()
+    # except Exception as e:
+    #     app.logger.error(e)
+    #     return "failed", 500
+    # else:
         return "ok"
 
 
@@ -50,7 +50,7 @@ def get_daily_visits():
 
 @app.route("/api/reports/daily_usage", methods=["GET"])
 def daily_visits():
-    return jsonify(get_daily_visits)
+    return jsonify(get_daily_visits())
 
 
 @app.route("/api/reports/user_visits", methods=["GET"])

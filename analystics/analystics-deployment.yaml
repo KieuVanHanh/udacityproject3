@@ -30,8 +30,10 @@ spec:
     spec:
       containers:
       - name: coworking
-        image: 474069616949.dkr.ecr.us-east-1.amazonaws.com/test-coworking-analytics:6
+        image: 474069616949.dkr.ecr.us-east-1.amazonaws.com/test-coworking-analytics:v10
         imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5153
         livenessProbe:
           httpGet:
             path: /health_check
@@ -53,4 +55,6 @@ spec:
             secretKeyRef:
               name: postgres-config
               key: DB_PASSWORD
+      imagePullSecrets:
+        - name: docker-registry-secret
       restartPolicy: Always
