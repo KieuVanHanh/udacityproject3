@@ -13,7 +13,7 @@ phases:
       - echo default region $AWS_DEFAULT_REGION
       - echo account id $AWS_ACCOUNT_ID
       - echo image tag $CODEBUILD_BUILD_NUMBER
-      - docker build -t $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER -f .\analystics\ .
+      - docker build -t $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER -f .\analystics\
       - docker tag $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER      
   post_build:
     commands:
