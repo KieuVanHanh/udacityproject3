@@ -31,7 +31,7 @@ spec:
       containers:
       - name: coworking
         image: 474069616949.dkr.ecr.us-east-1.amazonaws.com/test-coworking-analytics:v10
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 5153
         livenessProbe:
@@ -50,6 +50,26 @@ spec:
         - configMapRef:
             name: postgres-config
         env:
+        - name: DB_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: DB_USERNAME
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: DB_NAME
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: DB_PORT
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
