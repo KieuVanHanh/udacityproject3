@@ -74,7 +74,7 @@ Access to docker file
 *   Set **DB\_HOST** to the service name of the Kubernetes PostgreSQL pod.
 
 
-## 6: CloudWatch Agent Setup
+##6: CloudWatch Agent Setup
 
 *   Set up CloudWatch agent for monitoring.
 
