@@ -1,7 +1,7 @@
 # Coworking Space Service Extension
 The Coworking Space Service is a set of APIs that enables users to request one-time tokens and administrators to authorize access to a coworking space. This service follows a microservice pattern and the APIs are split into distinct services that can be deployed and managed independently of one another.
 
-## 1: Set Up a Postgres Database with Helm Chart
+## 1:  Set Up a Postgres Database with Helm Chart
 Pre-requisites:
 - Have Kubernetes cluster ready.
 - Have `kubectl` installed and configured to interact with your cluster.
@@ -74,7 +74,7 @@ Access to docker file
 *   Set **DB\_HOST** to the service name of the Kubernetes PostgreSQL pod.
 
 
-## 6: CloudWatch Agent Setup
+##6: CloudWatch Agent Setup
 
 *   Set up CloudWatch agent for monitoring.
 
